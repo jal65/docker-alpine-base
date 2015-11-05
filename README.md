@@ -1,6 +1,6 @@
 # docker-alpine-base
 
-## ...to be used in FROM directive of Dockerfile
+## ...start your Dockerfile
 
 ```shell
 FROM robwdux/alpine-base
