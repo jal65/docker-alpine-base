@@ -44,6 +44,8 @@ sudo docker exec -it base bash
 
 + [Package Management](http://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management)
 
++ [Search the mail archives for help](http://lists.alpinelinux.org/)
+
 #### [userland commands provided by busybox](http://www.busybox.net/downloads/BusyBox.html)
 
 [command reference](http://www.busybox.net/downloads/BusyBox.html)
