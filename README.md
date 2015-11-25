@@ -8,18 +8,18 @@
 FROM robwdux/alpine-base
 ```
 
-+ Provides cURL and Bash
++ Provides cURL, root ca-certificates and Bash shell (not default sh)
 
-+ [Leverages fast CDN backed package mirrors provided by fastly](http://gliderlabs.com/blog/2015/09/23/fastly-cdn-speeds-up-alpine-package-installs/)
++ [Leverages fast CDN backed package mirrors provided by fastly courtesy of Gliderlabs](http://gliderlabs.com/blog/2015/09/23/fastly-cdn-speeds-up-alpine-package-installs/)
 
 ## Test Drive
 
 ### shell in interactively
 ```shell
 sudo docker run --rm -it \
-                   --name base \
-                   robwdux/alpine-base \
-                   bash
+                --name base \
+                robwdux/alpine-base \
+                bash
 ```
 ### shell into a daemonized running container
 ```shell
