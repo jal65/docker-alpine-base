@@ -12,7 +12,9 @@ FROM robwdux/alpine-base
 
 + [Package mirrors deliverd by Fastly CDN courtesy of Gliderlabs](http://gliderlabs.com/blog/2015/09/23/fastly-cdn-speeds-up-alpine-package-installs/)
 
-## Test Drive, Iterate for a new image interactively and record in a new Dockerfile
+## Test Drive, Iterate for a new image
+
+*Interactively test commands and such then record in a Dockerfile for a new project*
 
 ### Build or run with docker-compose
 ```shell
