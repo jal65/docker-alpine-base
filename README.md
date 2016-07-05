@@ -19,6 +19,11 @@ FROM robwdux/alpine-base
 # add short alias for docker-compose
 echo "alias dc='docker-compose '" >> ~/.bashrc && source ~/.bashrc
 
+# the repo
+git clone https://github.com/robwdux/docker-alpine-base.git
+
+cd docker-alpine-base/
+
 # build and run (image doesn't exist locally)
 dc run --rm -ti base bash
 
@@ -52,14 +57,14 @@ sudo docker run --rm -it \
 [for example: offical alpine ruby image](https://github.com/docker-library/ruby/blob/master/2.3/alpine/Dockerfile)
 
 ```shell
-apk update && apk search rabbit*
+$ apk update && apk search rabbit*
 rabbitmq-c-dev-0.8.0-r0
 py-rabbit-1.1.0-r0
 rabbitmq-c-doc-0.8.0-r0
 rabbitmq-c-0.8.0-r0
 rabbitmq-c-utils-0.8.0-r0
 
-apk info rabbitmq-c
+$ apk info rabbitmq-c
 rabbitmq-c-0.8.0-r0 description:
 RabbitMQ C client
 
@@ -68,7 +73,11 @@ https://github.com/alanxz/rabbitmq-c
 
 rabbitmq-c-0.8.0-r0 installed size:
 126976
+```
 
+### Take advantage of repo pinning support added
+#### Target edge branch and the associated repositories
+```shell
 # keep it tidy, no apk cache left behind. install any package from current release, any repo (main,community, testing)
 apk add --no-cache
 # install from particular edge repos
@@ -79,6 +88,11 @@ apk add --no-cache \
         bmon@community \
         # edge branch, testing repository
         rabbitmq-c@testing
+```
+
+### Handling Build Dependencies
+#### Purge the bloat after they have served the purpose
+```shell
 # tag a group of apks installed, simplifies removal at a later time, e.g. build dependencies
 apk add --no-cache --virtual .buildDeps \
         make \
