@@ -54,7 +54,7 @@ sudo docker run --rm -it \
 ```
 ### search for and install packages, build from source
 
-#### Reference [APKBUILDs](https://github.com/alpinelinux/aports) for source builds if official ones do not already exist in [Docker Library](https://github.com/docker-library)
+*Reference [APKBUILDs](https://github.com/alpinelinux/aports) for source builds if official ones do not already exist in [Docker Library](https://github.com/docker-library)*
 
 [for example: offical alpine ruby image](https://github.com/docker-library/ruby/blob/master/2.3/alpine/Dockerfile)
 
