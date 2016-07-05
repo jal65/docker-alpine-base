@@ -52,8 +52,23 @@ sudo docker run --rm -it \
 [for example: offical alpine ruby image](https://github.com/docker-library/ruby/blob/master/2.3/alpine/Dockerfile)
 
 ```shell
-apk search
-apk info
+apk update && apk search rabbit*
+rabbitmq-c-dev-0.8.0-r0
+py-rabbit-1.1.0-r0
+rabbitmq-c-doc-0.8.0-r0
+rabbitmq-c-0.8.0-r0
+rabbitmq-c-utils-0.8.0-r0
+
+apk info rabbitmq-c
+rabbitmq-c-0.8.0-r0 description:
+RabbitMQ C client
+
+rabbitmq-c-0.8.0-r0 webpage:
+https://github.com/alanxz/rabbitmq-c
+
+rabbitmq-c-0.8.0-r0 installed size:
+126976
+
 # keep it tidy, no apk cache left behind. install any package from current release, any repo (main,community, testing)
 apk add --no-cache
 # install from particular edge repos
