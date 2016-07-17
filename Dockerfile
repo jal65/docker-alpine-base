@@ -20,9 +20,7 @@ RUN set -o nounset -o errexit -o xtrace -o verbose \
               #rabbitmq-c@testing \
               # community apk, current branch
               #erlang \
-              curl \
               ca-certificates \
-              bash \
               sed
 
 # COMMIT - git show -s --format=%H

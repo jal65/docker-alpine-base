@@ -1,6 +1,10 @@
 # docker-alpine-base
 
+See below for help with Alpine Linux
+
+<!---
 [![](https://badge.imagelayers.io/robwdux/docker-alpine-base:latest.svg)](https://imagelayers.io/?images=robwdux/docker-alpine-base:latest 'Get your own badge on imagelayers.io')
+-->
 
 ## ...start your Dockerfile
 
@@ -8,7 +12,9 @@
 FROM robwdux/alpine-base
 ```
 
-+ Provides Bash shell (available, but not as the default sh), cURL, root ca-certificates and full featured sed
++ Included are ca-certificates and full featured sed (runtime config replacements), refrain from installing bash... no Alpine packages rely on it and existing shell scripts should work using _**#!/bin/sh**_ or require minimal modification beyond that
+
++ Repo pinning supported for Edge branch
 
 + [Package mirrors deliverd by Fastly CDN courtesy of Gliderlabs](http://gliderlabs.com/blog/2015/09/23/fastly-cdn-speeds-up-alpine-package-installs/)
 
@@ -27,7 +33,7 @@ git clone https://github.com/robwdux/docker-alpine-base.git
 cd docker-alpine-base/
 
 # build and run (image doesn't exist locally)
-dc run --rm -ti base bash
+dc run --rm -ti base sh
 
 # build explicitly
 dc build
@@ -50,7 +56,7 @@ $ docker inspect --format '{{ json .Config.Labels }}' robwdux/alpine-base:3.4 | 
 sudo docker run --rm -it \
                 --name base \
                 robwdux/alpine-base \
-                bash
+                sh
 ```
 ### search for and install packages, build from source
 
@@ -80,9 +86,9 @@ rabbitmq-c-0.8.0-r0 installed size:
 ### Take advantage of repo pinning support added
 #### Target edge branch and the associated repositories
 ```shell
-# keep it tidy, no apk cache left behind. install any package from current release, any repo (main,community, testing)
-apk add --no-cache
-# install from particular edge repos
+# keep it tidy, no apk cache left behind.
+# install any package from current release, any repo (main,community, testing)
+# or from particular edge repos
 apk add --no-cache \
         # edge branch, main repository
         redis@edge \
@@ -139,13 +145,15 @@ sudo docker exec -it base bash
 
 #### [default shell - Almquist (ash)](http://www.in-ulm.de/~mascheck/various/ash/#busybox)
 
++ [busybox shell readme](http://git.busybox.net/busybox/tree/shell/README)
+
 + command substituion **$( ... )**, pipefail, substring and replacement parameter expansion
 
 + redirect stderr to stdout **&>**
 
-+ no brace expansion **file{1..2}**, arrays, aliases, or jobcontrol
++ _**not supported**_: brace expansion _file{1..2}_, arrays, aliases, or jobcontrol
 
-+ [busybox shell readme](http://git.busybox.net/busybox/tree/shell/README)
+
 
 #### [libc - musl](http://www.musl-libc.org/)
 
