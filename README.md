@@ -2,9 +2,7 @@
 
 See below for help with Alpine Linux
 
-<!---
-[![](https://badge.imagelayers.io/robwdux/docker-alpine-base:latest.svg)](https://imagelayers.io/?images=robwdux/docker-alpine-base:latest 'Get your own badge on imagelayers.io')
--->
+[![](https://images.microbadger.com/badges/image/robwdux/alpine-base.svg)](https://microbadger.com/images/robwdux/alpine-base "Get your own image badge on microbadger.com")
 
 ## ...start your Dockerfile
 
